@@ -17,3 +17,7 @@
 #         print(sym,'-',count)
 # strcounter('aaaaaaaaaaaaaabbbccccccddd')
 
+#Домашнее задание
+s=input()
+h=len(s)//2
+print(s[:h]==s[:len(s)-h-1:-1])
