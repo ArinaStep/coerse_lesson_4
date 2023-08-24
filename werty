@@ -1,0 +1,26 @@
+from tkinter import *
+window=Tk()
+window.geometry('600x800')
+canvas=Canvas(window,width=800,height=600,bg='white')
+canvas.pack()
+
+
+class House:
+    def __init__(self,roof_color,wall_color):
+        self.roof_color=roof_color
+        self.wall_color=wall_color
+        self.width=100
+        self.height=130
+        self.roof=None
+        self.wall=None
+
+    def built_house(self,x,y):
+        h=self.height
+        w=self.width
+        self.roof=canvas.create_polygon(x,y,x+w/2,h-100,fill=self.roof_color)
+        self.wall=canvas.create_rectangle(x+20,y,x+80,y+100,fill=self.wall_color)
+
+house1= House('green', 'yellow')
+house2= House('blue', 'purple')
+house1.built_house(20,50)
+house2.built_house(180,50)
